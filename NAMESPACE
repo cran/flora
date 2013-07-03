@@ -1,0 +1,3 @@
+export(taxon.author, fmt.taxa, lower.taxa, taxon.synonyms, taxon.family, get.taxon.info, suggest.names, is.accepted, taxon.citation)
+import(RCurl, rjson, XML)
+useDynLib(flora)
