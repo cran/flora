@@ -1,16 +1,16 @@
 Package: flora
 Type: Package
-Title: flora: taxonomical information on flowering species that occur
-        in Brazil
-Version: 0.1
-Date: 2013-07-03
+Title: tools for interacting with the Brazilian Flora Checklist
+Version: 0.2
 Author: Gustavo Carvalho
 Maintainer: Gustavo Carvalho <gustavo.bio@gmail.com>
-Depends: R (>= 2.10), RCurl, XML, rjson
-Description: Retrieve taxonomical information of botanical names from
-        the Flora do Brasil website
-License: GPL
-Packaged: 2013-07-04 19:01:58 UTC; gustavo
-NeedsCompilation: yes
+Depends: R (>= 3.0.2)
+Imports: dplyr
+Description: Tools to quickly compile taxonomic and distribution data from
+    the Brazilian Flora Checklist. No internet connection needed.
+License: GPL (>= 2)
+SysDataCompression: gzip
+Packaged: 2014-05-29 23:18:17 UTC; ewpnpwek
+NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-07-04 21:48:47
+Date/Publication: 2014-05-30 01:25:42
