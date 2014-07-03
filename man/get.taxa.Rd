@@ -3,16 +3,18 @@
 \alias{get.taxa}
 \title{Get plant taxonomical and distribution data}
 \usage{
-get.taxa(taxa, replace.synonyms = TRUE, life.form = FALSE,
-  habitat = FALSE, vernacular = FALSE, states = FALSE,
-  establishment = FALSE, drop = c("authorship", "genus", "specific.epiteth",
-  "infra.epiteth", "name.status"))
+get.taxa(taxa, replace.synonyms = TRUE, suggest.names = TRUE,
+  life.form = FALSE, habitat = FALSE, vernacular = FALSE,
+  states = FALSE, establishment = FALSE, drop = c("authorship", "genus",
+  "specific.epiteth", "infra.epiteth", "name.status"))
 }
 \arguments{
 \item{taxa}{a character vector containing one or more taxa, without authors
 see \code{\link{remove.authors}} if you have a list with authorities}
 
 \item{replace.synonyms}{should the function automatically replace synonyms?}
+
+\item{suggest.names}{should the function try to correct misspelled names?}
 
 \item{life.form}{include the life form of the taxon?}
 
@@ -25,7 +27,7 @@ see \code{\link{remove.authors}} if you have a list with authorities}
 \item{establishment}{include the establishment type (native, cultivated or
 naturalized)?}
 
-\item{drop}{character vector with names of columns with taxonomic
+\item{drop}{NULL or character vector with names of columns with taxonomic
 information to be removed from the returned data frame. Available names:
 "id", "scientific.name", "accepted.name", "family", "genus",
 "specific.epiteth", "infra.epiteth", "taxon.rank", "authorship",
@@ -49,8 +51,10 @@ The returned data frame will contain a variable number of rows and
   guess for the name.
 }
 \examples{
+\dontrun{
 data(plants)
 get.taxa(plants)
 get.taxa(plants, life.form = TRUE, establishment = TRUE)
+}
 }
 

@@ -15,8 +15,8 @@
 #'   \item{process lists of names and automatically solve synonyms and typing errors}
 #' }
 #' flora now holds all the data it needs. All functions can be used whilst offline.
-#' @import dplyr
 #' @docType package
+#' @import shiny
 #' @name flora
 #' @aliases flora flora-package
 NULL
