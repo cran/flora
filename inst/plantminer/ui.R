@@ -1,4 +1,5 @@
-shinyUI(fluidPage(  
+shinyUI(fluidPage(
+  tags$title("Plantminer - Brazilian Flora Checklist"),
   h1("Plantminer"),
   sidebarLayout(
     sidebarPanel(width = 3,
@@ -9,6 +10,8 @@ shinyUI(fluidPage(
                  checkboxInput("vernacular", label = "Vernacular names", value = FALSE),
                  checkboxInput("states", label = "Occurrence", value = FALSE),
                  checkboxInput("establishment", label = "Establishment", value = FALSE),
+                 sliderInput("distance", label = "Suggestion conservativeness",
+                             min = 0, max = 1, value = 0.9),
                  tags$form(
                    tags$textarea(id="taxa", rows=16, cols=5, "Miconia albicans\nMyrcia lingua\nCofea arabica"),
                    tags$br(),
