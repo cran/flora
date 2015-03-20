@@ -19,16 +19,16 @@
 #'   information to be removed from the returned data frame. Available names: 
 #'   "id", "scientific.name", "accepted.name", "family", "genus",
 #'   "specific.epiteth", "infra.epiteth", "taxon.rank", "authorship",
-#'   "taxon.status", "name.status", and "search.str".
+#'   "taxon.status", "name.status", "threat.status", and "search.str".
 #' @param suggestion.distance a value between 0 and 1 indicanting how conservative the
 #'   name suggestion algorithm should be. Values closer to 1 are very
-#'   conservative. Be very careful, low values can give wrong suggestions.
+#'   conservative. Be very careful, lower values can give wrong suggestions.
 #' @details The returned data frame will contain a variable number of rows and 
 #'   columns depending on how the function was called. For instance, since there
 #'   might be more than one vernacular name for each taxon, some rows
 #'   will be duplicated if \code{vernacular} is set to \code{TRUE}. All misspelled taxa
 #'   are automatically corrected if the function can come up with a reasonable
-#'   guess for the name.
+#'   guess for the name. Conservation status follows the IUCN nomenclature.
 #' @return a data frame
 #' @export
 #' @examples 
@@ -105,7 +105,6 @@ get.taxa <- function (taxa, replace.synonyms = TRUE, suggest.names = TRUE,
     nrow.synonym <- nrow(synonym)
     if (nrow.synonym > 0L) {
       if (replace.synonyms) {
-        ## ver aqui pq pode ser que as relações não sejam de nome aceito e sim sinônimos
         related <- relationships[with(relationships, {which(related.id %in% synonym$id)}), ]   
         accepted <- all.taxa[with(all.taxa, {
           which(id %in% related$id & taxon.status == "accepted")
@@ -173,23 +172,23 @@ get.taxa <- function (taxa, replace.synonyms = TRUE, suggest.names = TRUE,
   }
   if (life.form) {
     res <- merge(res, species.profiles[, c("id", "life.form")], 
-                 by = "id", all.x = TRUE)
+                 by = "id", all.x = TRUE, sort = FALSE)
   }
   if (habitat) {
     res <- merge(res, species.profiles[, c("id", "habitat")], 
-                 by = "id", all.x = TRUE)
+                 by = "id", all.x = TRUE, sort = FALSE)
   }
   if (vernacular) {
     res <- merge(res, vernacular.names[, c("id", "vernacular.name", 
-                                           "locality")], by = "id", all.x = TRUE)
+                                           "locality")], by = "id", all.x = TRUE, sort = FALSE)
   }
   if (states) {
     res <- merge(res, distribution[, c("id", "occurrence")], 
-                 by = "id", all.x = TRUE)
+                 by = "id", all.x = TRUE, sort = FALSE)
   }
   if (establishment) {
     res <- merge(res, distribution[, c("id", "establishment")], 
-                 by = "id", all.x = TRUE)
+                 by = "id", all.x = TRUE, sort = FALSE)
   }
   res
 }
