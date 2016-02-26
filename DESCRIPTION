@@ -1,16 +1,19 @@
 Package: flora
 Type: Package
-Title: Tools for Interacting with the Brazilian Flora Checklist
-Version: 0.2.4
+Title: Tools for Interacting with the Brazilian Flora 2020
+Version: 0.2.7
 Author: Gustavo Carvalho
 Maintainer: Gustavo Carvalho <gustavo.bio@gmail.com>
 Depends: R (>= 3.0.0)
-Imports: shiny
+Imports: shiny, httr, dplyr, utils
 Description: Tools to quickly compile taxonomic and distribution data from
-    the Brazilian Flora Checklist.
+    the Brazilian Flora 2020 at http://floradobrasil.jbrj.gov.br/.
 License: GPL (>= 2)
-BugReports: http://www.github.com/gustavobio/flora
-Packaged: 2015-03-20 17:21:28 UTC; gustavo
+URL: http://www.github.com/gustavobio/flora
+BugReports: http://www.github.com/gustavobio/flora/issues
+Suggests: testthat
+RoxygenNote: 5.0.1
 NeedsCompilation: no
+Packaged: 2016-02-26 01:26:32 UTC; gustavo
 Repository: CRAN
-Date/Publication: 2015-03-20 18:43:56
+Date/Publication: 2016-02-26 05:49:27

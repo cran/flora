@@ -1,3 +1,28 @@
+flora 0.2.7
+================
+  
+  * Updated dataset (21st Feb 2016)
+  
+  * New parse option in `get.taxa` to remove authors using the GBIF parser
+  
+  * Changed the name of the data source from Brazilian Flora Checklist to Brazilian Flora 2020
+  
+flora 0.2.6
+================
+
+  * Updated dataset (31st July)
+  
+  * Export taxa in the Phylomatic format
+  
+flora 0.2.5
+================
+
+  * Updated dataset (April 29th)
+  
+  * Fixed linkouts in `web.flora`
+  
+  * Fixed species occurrences
+  
 flora 0.2.4
 ================
 
