@@ -1,3 +1,17 @@
+flora 0.2.8
+================
+
+  * New function to list all the synonyms of a name (`get.synonyms`)
+  
+  * New functions to get phytogeographic domains (`get_domains`)
+  
+  * Removed shiny from imports
+  
+  * Updated dataset (12th Jan 2017)
+  
+  * New function to retrieve information on vegetation types for a list of taxa (`get_vegtype`)
+
+
 flora 0.2.7
 ================
   
