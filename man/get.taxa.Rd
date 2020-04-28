@@ -5,8 +5,9 @@
 \title{Get plant taxonomical and distribution data}
 \usage{
 get.taxa(taxa, replace.synonyms = TRUE, suggest.names = TRUE,
-  life.form = FALSE, habitat = FALSE, vernacular = FALSE,
-  states = FALSE, establishment = FALSE, drop = c("authorship", "genus",
+  life.form = FALSE, habitat = FALSE, vegetation.type = FALSE,
+  vernacular = FALSE, states = FALSE, establishment = FALSE,
+  domain = FALSE, endemism = FALSE, drop = c("authorship", "genus",
   "specific.epiteth", "infra.epiteth", "name.status"),
   suggestion.distance = 0.9, parse = FALSE)
 }
@@ -22,12 +23,18 @@ see \code{\link{remove.authors}} if you have a list with authorities}
 
 \item{habitat}{include the habitat of the taxon?}
 
+\item{vegetation.type}{include the listed vegetation types?}
+
 \item{vernacular}{include vernacular names and localities?}
 
 \item{states}{include occurrence data?}
 
 \item{establishment}{include the establishment type (native, cultivated or 
 naturalized)?}
+
+\item{domain}{return phytogeographyc domains?}
+
+\item{endemism}{is the taxon endemic to Brazil?}
 
 \item{drop}{NULL or character vector with names of columns with taxonomic
 information to be removed from the returned data frame. Available names: 
